@@ -1,0 +1,174 @@
+nav ul {
+  background: blue;
+}
+.inline,
+nav ul {
+  color: red;
+}
+/*
+nav ul {
+  background: blue;
+}
+.inline,
+nav ul {
+  color: red;
+}
+*/
+.a {
+  background: blue;
+}
+.b,
+.a {
+  color: red;
+}
+.c,
+.a {
+  font-size: 12px;
+}
+/*
+.a {
+  background: blue;
+}
+.b,
+.a {
+  color: red;
+}
+.c,
+.a {
+  font-size: 12px;
+}
+*/
+.big-division,
+.big-bag,
+.big-bucket {
+  color: red;
+}
+.bag,
+.big-bag {
+  font-size: 12px;
+}
+.bucket,
+.big-bucket {
+  background: #000;
+}
+/*
+.big-division,
+.big-bag,
+.big-bucket {
+  color: red;
+}
+.bag,
+.big-bag {
+  font-size: 12px;
+}
+.bucket,
+.big-bucket {
+  background: #000;
+}
+*/
+.bucket tr,
+.some-class {
+  color: blue;
+}
+.some-class {
+  font-size: 10px;
+}
+/*
+.bucket tr,
+.some-class {
+  color: blue;
+}
+.some-class {
+  font-size: 10px;
+}
+*/
+.a.b.test,
+.test.c,
+.a.b.replacement,
+.replacement.c {
+  color: orange;
+}
+.test:hover,
+.replacement:hover {
+  color: green;
+}
+/*
+.a.b.test,
+.test.c,
+.a.b.replacement,
+.replacement.c {
+  color: orange;
+}
+.test:hover,
+.replacement:hover {
+  color: green;
+}
+*/
+.aaa,
+.selector {
+  color: blue;
+}
+/*
+.aaa,
+.selector {
+  color: blue;
+*/
+@media print {
+  .selector,
+  .screenClass,
+  .topLevel {
+    color: black;
+  }
+}
+.selector,
+.topLevel {
+  color: red;
+}
+@media screen {
+  .selector,
+  .topLevel {
+    color: blue;
+  }
+}
+/*
+@media print {
+  .selector,
+  .screenClass {
+    color: black;
+  }
+}
+.selector {
+  color: red;
+}
+@media screen {
+  .selector {
+    color: blue;
+  }
+}
+*/
+@media screen {
+  .selector,
+  .topLevel {
+    color: blue;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .selector,
+  .topLevel {
+    color: blue;
+  }
+}
+/*
+@media screen {
+  .selector,
+  .topLevel {
+    color: blue;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .selector,
+  .topLevel {
+    color: blue;
+  }
+}
+*/

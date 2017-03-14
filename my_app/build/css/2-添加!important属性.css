@@ -1,0 +1,18 @@
+.unimportant {
+  background: 1;
+  color: #900;
+}
+.important {
+  background: 2 !important;
+  color: #900 !important;
+}
+/*
+.unimportant {
+  background: 1;
+  color: #900;
+}
+.important {
+  background: 2 !important;
+  color: #900 !important;
+}
+*/

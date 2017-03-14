@@ -1,0 +1,32 @@
+/*
+这里的 light对应 .mixin(light; @color) { 的 light，
+就是说会选中 .mixin(light; @color) {
+会执行 color: lighten(@color, 10%); 让颜色轻10%
+*/
+.class {
+  color: #a2a2a2;
+  display: block;
+}
+/*
+.class {
+  color: #a2a2a2;
+  display: block;
+}
+*/
+/*
+这里的 dark对应 .mixin(dark; @color) { 的 dark
+就是说会选中 .mixin(dark; @color) {
+会执行 color: darken(@color, 10%); 让颜色重10%
+*/
+.class2 {
+  color: #6f6f6f;
+  display: block;
+}
+/*
+.class2 {
+  color: #6f6f6f;
+  display: block;
+}
+*/
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIjIt5oyJ5p2h5Lu25Yy56YWN5oyH5a6a5qC35byPLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFlQTtFQVhFLGNBQUE7RUFHQSxjQUFBOzs7Ozs7Ozs7Ozs7O0FBdUJGO0VBN0JFLGNBQUE7RUFNQSxjQUFBIiwic291cmNlc0NvbnRlbnQiOlsiLm1peGluKGRhcms7IEBjb2xvcikge1xuICBjb2xvcjogZGFya2VuKEBjb2xvciwgMTAlKTtcbn1cbi5taXhpbihsaWdodDsgQGNvbG9yKSB7XG4gIGNvbG9yOiBsaWdodGVuKEBjb2xvciwgMTAlKTtcbn1cbi5taXhpbihAXzsgQGNvbG9yKSB7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuQHN3aXRjaDogbGlnaHQ7XG4vKlxu6L+Z6YeM55qEIGxpZ2h05a+55bqUIC5taXhpbihsaWdodDsgQGNvbG9yKSB7IOeahCBsaWdodO+8jFxu5bCx5piv6K+05Lya6YCJ5LitIC5taXhpbihsaWdodDsgQGNvbG9yKSB7XG7kvJrmiafooYwgY29sb3I6IGxpZ2h0ZW4oQGNvbG9yLCAxMCUpOyDorqnpopzoibLovbsxMCVcbiovXG4uY2xhc3Mge1xuICAubWl4aW4oQHN3aXRjaDsgIzg4OCk7XG59XG4vKlxuLmNsYXNzIHtcbiAgY29sb3I6ICNhMmEyYTI7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuKi9cbkBzd2l0Y2gyOiBkYXJrO1xuLypcbui/memHjOeahCBkYXJr5a+55bqUIC5taXhpbihkYXJrOyBAY29sb3IpIHsg55qEIGRhcmtcbuWwseaYr+ivtOS8mumAieS4rSAubWl4aW4oZGFyazsgQGNvbG9yKSB7XG7kvJrmiafooYwgY29sb3I6IGRhcmtlbihAY29sb3IsIDEwJSk7IOiuqeminOiJsumHjTEwJVxuKi9cbi5jbGFzczIge1xuICAubWl4aW4oQHN3aXRjaDI7ICM4ODgpO1xufVxuLypcbi5jbGFzczIge1xuICBjb2xvcjogIzZmNmY2ZjtcbiAgZGlzcGxheTogYmxvY2s7XG59XG4qL1xuIl0sImZpbGUiOiIyLeaMieadoeS7tuWMuemFjeaMh+Wumuagt+W8jy5jc3MifQ== */

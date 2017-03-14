@@ -1,0 +1,125 @@
+.class {
+  width: 50%;
+  color: #f6430f;
+  background-color: #f8b38d;
+}
+/*
+.class {
+  width: 50%;
+  color: #f6430f;
+  background-color: #f8b38d;
+}
+*/
+.caller {
+  width: 100%;
+  height: 200px;
+}
+/*
+.caller {
+  width: 100%;
+  height: 200px;
+}
+*/
+div {
+  padding: 33px;
+}
+/*
+div {
+  padding: 33px;
+}
+*/
+.mobile_box {
+  width: 0.5px;
+}
+/*
+.mobile_box {
+  width: 0.5px;
+}
+*/
+.max_box {
+  width: 4px;
+}
+/*
+.max_box {
+  width: 4px;
+}
+*/
+.mixin_width {
+  /*
+iscolor
+isnumber
+isstring
+iskeyword
+isurl
+*/
+  width: 6px;
+}
+/*
+.mixin_width {
+  width: 6px;
+}
+*/
+.mixin2_width {
+  width: 0;
+}
+/*
+.mixin2_width {
+  width: 0;
+}
+*/
+button {
+  color: white;
+}
+/*
+button {
+  color: white;
+}
+*/
+button {
+  color: white;
+}
+a {
+  color: blue;
+}
+/*
+button {
+  color: white;
+}
+a {
+  color: blue;
+}
+*/
+.column-1 {
+  width: 25%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 75%;
+}
+.column-4 {
+  width: 100%;
+}
+/*
+.column-1 {
+  width: 25%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 75%;
+}
+.column-4 {
+  width: 100%;
+}
+*/
+.merge_box2 {
+  box-shadow: inset 0 0 10px #555, 0 0 20px black;
+}
+/*
+.merge_box2 {
+  box-shadow: inset 0 0 10px #555, 0 0 20px black;
+}
+*/

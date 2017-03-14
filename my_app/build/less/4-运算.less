@@ -1,0 +1,28 @@
+@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+
+.div {
+    color: #888 / 4;
+    height: 100% / 2 + @other;
+}
+/*
+.div {
+  color: #222222;
+  height: 65%;
+}
+*/
+//---------------------------------
+.average(@x, @y) {
+  @average: ((@x + @y) / 2);
+}
+
+div {
+  .average(16px, 50px);
+  padding: @average;
+}
+/*
+div {
+  padding: 33px;
+}
+*/

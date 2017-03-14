@@ -1,0 +1,30 @@
+/*
+这里的 light对应 .mixin(light; @color) { 的 light，
+就是说会选中 .mixin(light; @color) {
+会执行 color: lighten(@color, 10%); 让颜色轻10%
+*/
+.class {
+  color: #a2a2a2;
+  display: block;
+}
+/*
+.class {
+  color: #a2a2a2;
+  display: block;
+}
+*/
+/*
+这里的 dark对应 .mixin(dark; @color) { 的 dark
+就是说会选中 .mixin(dark; @color) {
+会执行 color: darken(@color, 10%); 让颜色重10%
+*/
+.class2 {
+  color: #6f6f6f;
+  display: block;
+}
+/*
+.class2 {
+  color: #6f6f6f;
+  display: block;
+}
+*/

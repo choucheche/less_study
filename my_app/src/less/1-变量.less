@@ -1,0 +1,96 @@
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+#header {
+    color: @light-blue;
+}
+/*
+#header {
+  color: #6c94be;
+}
+*/
+//----------------------------------------------------
+@link-color: #428bca; // sea blue
+@link-color-hover: darken(@link-color, 10%);
+
+.link,
+a {
+    color: @link-color;
+}
+
+a:hover {
+    color: @link-color-hover;
+}
+
+.widget {
+    color: #fff;
+    background: @link-color;
+}
+/*
+a,
+.link {
+  color: #428bca;
+}
+a:hover {
+  color: #3071a9;
+}
+.widget {
+  color: #fff;
+  background: #428bca;
+}
+*/
+//----------------------------------------------------
+@mySelector: banner; //变量定义 名称
+
+.@{mySelector} {
+    font-weight: bold;
+    line-height: 40px;
+    margin: 0 auto;
+}
+/*
+.banner {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}
+*/
+//----------------------------------------------------
+@images: "../img"; //变量定义 字符串
+
+body {
+    color: #444;
+    background: url("@{images}/me.jpg");
+}
+/*
+body {
+  color: #444;
+  background: url("../img/me.jpg");
+}
+*/
+//----------------------------------------------------
+@property: color; //变量定义 属性名
+
+.widget {
+    @{property}: #0ee;
+    background-@{property}: #999;
+}
+/*
+.widget {
+  color: #0ee;
+  background-color: #999;
+}
+*/
+//--------------------------------------------------
+@fnord: "#000";
+@var: "fnord"; //@var等于@fnord的值
+
+.fnord_div {
+    color: @@var;
+    //变量值为引用的 @fnord的值
+}
+/*
+.fnord_div {
+  color: "#000";
+}
+*/
+//--------------------------------------------------

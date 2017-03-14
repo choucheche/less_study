@@ -1,0 +1,27 @@
+@import "import1"; // 导入1-变量.less
+@base-color1:#fff;
+.div{
+  color:@base-color1;
+}
+//---------------------------------------
+@base-color2: green;
+@dark-color2: darken(@base-color2, 10%);
+@import "import2.less";
+@base-color2: red; //@base-color1 覆盖掉 import2.less里的 @base-color: green;
+
+.import_div {
+    color: @base-color2;
+    background: @dark-color2;
+}
+/*
+.import_div {
+  color: red;
+  background: #cc0000;
+}
+*/
+//---------------------------------------
+@themes: "import3"; //变量定义 路径名
+@import "@{themes}.less"; //方便导入其他样式文件
+.divabc{
+  color:#fff;
+}

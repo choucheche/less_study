@@ -1,0 +1,27 @@
+@var1: red;
+
+#page1 {
+    @var1: white;
+
+    #header1 {
+        color: @var1; // white
+    }
+}
+@var2: red;
+
+#page2 {
+    #header2 {
+        color: @var2; // white
+    }
+    @var2: white;
+}
+//变量的优先级，先在附近找，再向父级找
+/*
+#page1 #header1 {
+  color: white;
+}
+#page2 #header2 {
+  color: white;
+}
+*/
+//--------------------------------------------

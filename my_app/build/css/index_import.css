@@ -1,0 +1,10 @@
+.box2 {
+  color: #fff;
+  font-size: 10px;
+}
+.div a {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+  background: url(../img/me.jpg?v=jwOlYceyc7NJd1ixcdsDzw%3D%3D);
+}

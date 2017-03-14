@@ -1,0 +1,43 @@
+.lazy-eval {
+    width: @var1;
+}
+@var1: @a1;
+@a1: 9%;
+/*
+.lazy-eval {
+  width: 9%;
+}
+*/
+//----------------------------------------
+
+.lazy-eval-scope {
+    width: @var2;
+    @a2: 9%;
+}
+/*
+.lazy-eval-scope {
+  width: 9%;
+}
+*/
+@var2: @a2;
+@a2: 100%; //----------------------------------------
+@var3: 0;
+
+.class1 {
+    @var3: 1;
+
+    .class {
+        @var3: 2;
+        three: @var3;
+        @var3: 3;
+    }
+    one: @var3;
+}
+/*
+.class1 {
+  one: 1;
+}
+.class1 .class {
+  three: 3;
+}
+*/

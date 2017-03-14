@@ -1,0 +1,193 @@
+nav ul {
+    &:extend(.inline);
+    //nav ul也继承了.inline的样式
+    background: blue;
+}
+
+.inline {
+    color: red;
+}
+/*
+nav ul {
+  background: blue;
+}
+.inline,
+nav ul {
+  color: red;
+}
+*/
+//-------------------------------------
+
+.a {
+    &:extend(.b,.c);
+    //.a继承了.b和.c的样式
+    background: blue;
+}
+
+.b {
+    color: red;
+}
+
+.c {
+    font-size: 12px;
+}
+/*
+.a {
+  background: blue;
+}
+.b,
+.a {
+  color: red;
+}
+.c,
+.a {
+  font-size: 12px;
+}
+*/
+//-------------------------------------
+.big-division, .big-bag:extend(.bag), .big-bucket:extend(.bucket){
+    //继承的组合写法
+    color: red;
+}
+
+.bag {
+    font-size: 12px;
+}
+
+.bucket {
+    background: #000;
+}
+/*
+.big-division,
+.big-bag,
+.big-bucket {
+  color: red;
+}
+.bag,
+.big-bag {
+  font-size: 12px;
+}
+.bucket,
+.big-bucket {
+  background: #000;
+}
+*/
+//-------------------------------------
+
+.bucket {
+    tr {
+        // nested ruleset with target selector
+        color: blue;
+    }
+}
+.some-class:extend(.bucket tr){
+    // .some-class 继承了 .bucket tr的样式
+    font-size: 10px;
+}
+/*
+.bucket tr,
+.some-class {
+  color: blue;
+}
+.some-class {
+  font-size: 10px;
+}
+*/
+//----------------------------------------
+
+.a.b.test,
+.test.c {
+    color: orange;
+}
+
+.test {
+    &:hover {
+        color: green;
+    }
+}
+.replacement:extend(.test all){}
+//replacement 继承.test的所有相关样式
+/*
+.a.b.test,
+.test.c,
+.a.b.replacement,
+.replacement.c {
+  color: orange;
+}
+.test:hover,
+.replacement:hover {
+  color: green;
+}
+*/
+//--------------------------------------
+
+.aaa {
+    color: blue;
+}
+@{bbb}:extend(.aaa){}
+@bbb: .selector;
+/*
+.aaa,
+.selector {
+  color: blue;
+*/
+//--------------------------------------
+@media print {
+    .screenClass:extend(.selector){}
+    //各个 @media 下的值，不能相互继承，只继承当前 @media下的
+    .selector {
+        color: black;
+    }
+}
+
+.selector {
+    color: red;
+}
+@media screen {
+    .selector {
+        color: blue;
+    }
+}
+/*
+@media print {
+  .selector,
+  .screenClass {
+    color: black;
+  }
+}
+.selector {
+  color: red;
+}
+@media screen {
+  .selector {
+    color: blue;
+  }
+}
+*/
+//-------------------------------------
+@media screen {
+    .selector {
+        color: blue;
+    }
+    @media (min-width: 1023px) {
+        .selector {
+            color: blue;
+        }
+    }
+}
+.topLevel:extend(.selector){}
+//顶级继承 .topLevel继承了.selector所有样式，包括@media里的
+/*
+@media screen {
+  .selector,
+  .topLevel {
+    color: blue;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .selector,
+  .topLevel {
+    color: blue;
+  }
+}
+*/

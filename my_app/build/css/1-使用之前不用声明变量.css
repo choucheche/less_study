@@ -1,0 +1,30 @@
+.lazy-eval {
+  width: 9%;
+}
+/*
+.lazy-eval {
+  width: 9%;
+}
+*/
+.lazy-eval-scope {
+  width: 9%;
+}
+/*
+.lazy-eval-scope {
+  width: 9%;
+}
+*/
+.class1 {
+  one: 1;
+}
+.class1 .class {
+  three: 3;
+}
+/*
+.class1 {
+  one: 1;
+}
+.class1 .class {
+  three: 3;
+}
+*/

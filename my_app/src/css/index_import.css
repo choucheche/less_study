@@ -1,0 +1,11 @@
+.box2 {
+  color: #fff;
+  font-size: 10px;
+}
+.div a {
+  transform: translateX(-50%);
+  color: #fff;
+  background: url('../img/me.jpg');
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImltcG9ydDEubGVzcyIsImluZGV4X2ltcG9ydC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsV0FBQTtFQUNBLGVBQUE7O0FDREYsSUFBSztFQUNILFdBQVUsZ0JBQVY7RUFDQSxXQUFBO0VBQ0EsZ0JBQWUsZ0JBQWYiLCJzb3VyY2VzQ29udGVudCI6WyJAcmVkOiMwMDA7XHJcbi5ib3gye1xyXG4gIGNvbG9yOkByZWQ7XHJcbiAgZm9udC1zaXplOjEwcHg7XHJcbn1cclxuIiwiQGltcG9ydCBcImltcG9ydDFcIjtcbkByZWQ6I2ZmZjtcbi5kaXYgYXtcbiAgdHJhbnNmb3JtOnRyYW5zbGF0ZVgoLTUwJSk7XG4gIGNvbG9yOkByZWQ7XG4gIGJhY2tncm91bmQ6dXJsKCcuLi9pbWcvbWUuanBnJyk7XG59XG4iXSwiZmlsZSI6ImluZGV4X2ltcG9ydC5jc3MifQ== */
