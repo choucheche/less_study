@@ -128,12 +128,23 @@ npm install gulp-sass --save-dev
 //sass结束
 
 //合并文件
-concat = require('gulp-concat');
+concat = require('gulp-concat'),
 /*
 合并当前文件夹下所有javascript文件成一个js文件，减少网络请求。
 npm install gulp-concat --save-dev
 */
 //合并文件结束
+
+//jade
+jade = require('jade'),
+/*
+npm install jade --save-dev
+*/
+gulpJade = require('gulp-jade');
+/*
+npm install gulp-jade --save-dev
+*/
+//jade结束
 
 var app = {
     srcPath: 'src',
@@ -166,7 +177,7 @@ gulp.task('clean',function() {
   //删除dist里面所有的文件
 });
 
-gulp.task("browser-sync",["html",'bower_copy','script','style','imageMin','less','sass','concatJs'],function(){
+gulp.task("browser-sync",["html",'bower_copy','script','style','imageMin','less','sass','concatJs','jade'],function(){
 //将任务放入自动刷新页面插件里
   browserSync({
     port: 3000,
@@ -266,6 +277,8 @@ gulp.task('style',function(){
       remove:true //是否去掉不必要的前缀 默认：true
     }))
     .pipe(cssver()) //并给css里的引用文件加版本号
+    .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+    //当编译时出现语法错误或者其他异常,出现异常并不终止watch事件（gulp-plumber），并提示我们出现了错误（gulp-notify）。
     .pipe(gulp.dest(app.buildPath+'/css'))
     .pipe(cssmin({ //压缩css文件
       advanced: true,//类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
@@ -274,6 +287,8 @@ gulp.task('style',function(){
       keepSpecialComments: '*'
       //保留所有特殊前缀 当你用autoprefixer生成的浏览器前缀，如果不加这个参数，有可能将会删除你的部分前缀
     }))
+    .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+    //当编译时出现语法错误或者其他异常,出现异常并不终止watch事件（gulp-plumber），并提示我们出现了错误（gulp-notify）。
     .pipe(gulp.dest(app.distPath+'/css'))
     .pipe(browserSync.reload({stream:true}));
     //执行无需F5自动刷新页面
@@ -309,6 +324,8 @@ gulp.task('less', function () {
     .pipe(sourcemaps.init()) //为了找到生成css后对应的less文件
     .pipe(gulp.dest(app.buildPath+'/less'))
     .pipe(less()) //编译less文件
+    .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+    //当编译时出现语法错误或者其他异常,出现异常并不终止watch事件（gulp-plumber），并提示我们出现了错误（gulp-notify）。
     .pipe(sourcemaps.write()) //为了找到生成css后对应的less文件
     .pipe(gulp.dest(app.srcPath+'/css'))
     /*编译好的less放进去后，会放入进行监听css文件那里，
@@ -327,6 +344,8 @@ gulp.task('sass', function () {
     //当编译时出现语法错误或者其他异常,出现异常并不终止watch事件（gulp-plumber），并提示我们出现了错误（gulp-notify）。
     .pipe(gulp.dest(app.buildPath+'/sass'))
     .pipe(sass().on('error', sass.logError))
+    .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+    //当编译时出现语法错误或者其他异常,出现异常并不终止watch事件（gulp-plumber），并提示我们出现了错误（gulp-notify）。
     .pipe(gulp.dest(app.srcPath+'/css'))
     /*编译好的sass放进去后，会放入进行监听css文件那里，
       css任务那里会自动压缩css，给链接加版本号
@@ -346,6 +365,19 @@ gulp.task('concatJs',function(){
 });
 //合并文件结束
 
+//jade
+gulp.task('jade', function(){
+  gulp.src(app.srcPath+'/**/*.jade')
+    .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+    //当编译时出现语法错误或者其他异常,出现异常并不终止watch事件（gulp-plumber），并提示我们出现了错误（gulp-notify）。
+    .pipe(gulpJade({
+      pretty: true
+    }))
+    .pipe(gulp.dest(app.srcPath))
+    .pipe(browserSync.reload({stream:true}));
+});
+//jade结束
+
 gulp.task('serve', function() {
     gulp.watch(app.srcPath+'/bower_components/**/*', ['bower_copy']);
     gulp.watch(app.srcPath+'/**/*.html', ['html']);
@@ -355,13 +387,16 @@ gulp.task('serve', function() {
     gulp.watch(app.srcPath+'/css/**/*.css', ['style']);
     gulp.watch(app.srcPath+'/img/**/*', ['imageMin']);
     gulp.watch(app.srcPath+'/concat_js/**/*.js', ['concatJs']);
+    gulp.watch(app.srcPath+'/**/*.jade', ['jade']);
 });
 
-gulp.task("default",["clean","browser-sync","serve"]);
+gulp.task("default",["browser-sync","serve"]);
 /*
+执行gulp clean，清除dist,build目录里所有的文件
+
 每次执行default任务后
-先执行clean，清除dist,build目录里所有的文件
-再执行browser-sync，打开文件监听，无需F5自动刷新页面
+执行browser-sync，打开文件监听，无需F5自动刷新页面
 再执行serve，开启所有文件监听
+每次src里有的文件会创建到 build和dist文件夹里
 运行后，会提示localhost:3000没找到，这个报错没事，可以正常使用
 */
